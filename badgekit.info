@@ -1,0 +1,9 @@
+name = Badgekit
+description = Badgekit API Toolbox
+core = 7.x
+package = Open Badges
+version = 7.x-1.0-alpha1
+project = badgekit
+
+files[] = includes/BadgekitConnection.inc
+files[] = lib/JWT.php

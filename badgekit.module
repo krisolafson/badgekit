@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * Implements hook_menu()
+ *
+ * @return array
+ */
+function badgekit_menu() {
+  $items = array();
+
+  $items['badges'] = array(
+    'title' => 'Published Badges',
+    'page callback' => 'badgekit_page',
+    'access callback' => TRUE,
+    'weight' => -10,
+    'file' => 'badgekit.pages.inc',
+  );
+
+  return $items;
+}
+
+
+/**
+ * Implements hook_theme().
+ */
+function badgekit_theme() {
+  $items['badge'] = array(
+    'file' => 'badgekit.theme.inc',
+    'variables' => array(
+      'badge' => array(),
+    ),
+  );
+  return $items;
+}
