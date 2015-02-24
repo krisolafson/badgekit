@@ -16,7 +16,28 @@ function badgekit_menu() {
     'file' => 'badgekit.pages.inc',
   );
 
+  $items['admin/settings/badgekit'] = array(
+    'title' => 'Badgekit module settings',
+    'description' => 'Set Badgekit API URL and secret',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('badgekit_admin'),
+    'access arguments' => array('administer badgekit settings'),
+    'file' => 'badgekit.pages.inc',
+  );
+
   return $items;
+}
+
+
+/**
+ * Implements hook_permission().
+ */
+function badgekit_permission() {
+  return array(
+    'administer badgekit settings' => array(
+      'title' => t('Administer Badgekit module settings'),
+    )
+  );
 }
 
 

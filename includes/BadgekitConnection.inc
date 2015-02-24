@@ -67,7 +67,7 @@ class BadgekitConnection {
    */
   public function setPath($path) {
     $this->path = $path;
-    $this->url = 'https://still-dawn-1736.herokuapp.com' . $path;
+    $this->url = variable_get('badgekit_api_url', '') . $path;
   }
 
 
